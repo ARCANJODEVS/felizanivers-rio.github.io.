@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Vovó!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /*
+         * CSS - A "pintura" do nosso cartão
+         */
+
+        /* Estilo da página inteira (o fundo) */
+        body {
+            /* Um fundo rosa bem clarinho para emoldurar o cartão */
+            background-color: #fdf0f5;
+            font-family: 'Merriweather', serif; /* Uma fonte legível para o texto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* O cartão principal */
+        .cartao {
+            width: 700px; /* Aumentei a largura para acomodar as duas colunas */
+            max-width: 100%; /* Responsivo para celulares */
+            background-color: #ffffff; /* Fundo branco */
+            border-radius: 12px; /* Cantos arredondados */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            overflow: hidden; /* Para o cabeçalho não "vazar" */
+            border: 2px solid #D90081; /* Borda na cor principal */
+        }
+
+        /* O cabeçalho rosa, inspirado no site */
+        .cabecalho {
+            background-color: #D90081; /* O rosa/magenta forte */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* O título principal (Querida Vovó) */
+        .cabecalho h1 {
+            /* Usando a fonte cursiva "Great Vibes", parecida com a do site */
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5em; /* Tamanho grande e elegante */
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* O conteúdo do cartão (agora com colunas) */
+        .conteudo {
+            padding: 35px;
+            display: flex; /* Transforma o conteúdo em um container flexível */
+            flex-wrap: wrap; /* Permite que as colunas quebrem para a linha de baixo em telas pequenas */
+            gap: 30px; /* Espaço entre as colunas */
+            justify-content: center; /* Centraliza as colunas */
+            align-items: flex-start; /* Alinha o topo das colunas */
+        }
+
+        /* Estilo para a coluna da imagem */
+        .coluna-imagem {
+            flex: 1; /* Permite que a coluna cresça */
+            min-width: 250px; /* Largura mínima para a imagem */
+            text-align: center;
+            order: 1; /* Ordem padrão */
+        }
+
+        /* Estilo para a coluna do texto */
+        .coluna-texto {
+            flex: 2; /* Permite que a coluna do texto cresça mais que a imagem */
+            min-width: 300px; /* Largura mínima para o texto */
+            text-align: left; /* Texto alinhado à esquerda */
+            order: 2; /* Ordem padrão */
+        }
+        
+        /* A imagem dentro da coluna */
+        .coluna-imagem img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Cantos arredondados na foto */
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra suave para a imagem */
+        }
+
+        /* O título da mensagem */
+        .coluna-texto h2 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 1.8em;
+            color: #333;
+            margin-top: 0; /* Remove margem superior extra */
+            margin-bottom: 15px;
+        }
+
+        /* O parágrafo da mensagem */
+        .coluna-texto p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* A assinatura no final */
+        .assinatura {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #D90081; /* Cor rosa para combinar */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            text-align: center; /* Centraliza a assinatura */
+            display: block; /* Garante que ocupe a largura total */
+            margin-top: -15px; /* Ajusta um pouco a margem */
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            .cabecalho h1 {
+                font-size: 3.5em; /* Reduz o tamanho da fonte do título em telas menores */
+            }
+            .conteudo {
+                flex-direction: column; /* Em telas menores, as colunas empilham */
+                gap: 20px;
+            }
+            .coluna-imagem, .coluna-texto {
+                min-width: unset; /* Remove largura mínima */
+                width: 100%; /* Ocupa a largura total */
+                order: unset; /* Remove a ordem definida */
+            }
+            .coluna-texto {
+                text-align: center; /* Centraliza o texto quando empilhado */
+            }
+            .coluna-texto h2 {
+                margin-top: 15px; /* Adiciona margem superior quando empilhado */
+            }
+             .coluna-imagem {
+                order: -1; /* Coloca a imagem no topo quando empilhado */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cartao">
+        
+        <div class="cabecalho">
+            <h1>Querida Vovó</h1>
+        </div>
+
+        <div class="conteudo">
+            
+            <div class="coluna-imagem">
+                <img src="IMG-20201125-WA0031.jpg" alt="Bolo de aniversário bonito com flores">
+            </div>
+
+            <div class="coluna-texto">
+                <h2>Feliz Aniversário, Vó!</h2>
+
+                <p>
+                   Feliz aniversário, vó! Quero que a senhora saiba o quanto é especial pra mim e que eu te amo demais. Obrigado por tudo. Aproveite seu dia ao máximo!
+                </p>
+
+                <p class="assinatura">
+                    Com todo o nosso carinho, <br>
+                    [Cleiton Arcanjo]
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
